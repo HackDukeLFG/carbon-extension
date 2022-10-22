@@ -12,9 +12,19 @@
         "default_popup": "popup.html"
     },
     "host_permissions": [
-        "https://developer.chrome.com/*"
+        "https://developer.chrome.com/*",
+        "*://*/*"
     ],
     "permissions": [
         "tabGroups"
-    ]
-  }
+    ],
+    "content_scripts": [
+        {
+          "js": ["scripts/content.js"],
+          "matches": [
+            "*://*/*",
+            "https://patagonia.com/*"
+          ]
+        }
+      ]
+    }
