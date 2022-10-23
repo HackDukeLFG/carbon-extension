@@ -1,4 +1,4 @@
-//pass in longitude, latitude, days, weight of package, and type that was outlined on spreadsheet
+//pass in longitude, latitude, days, weight of package (in Kilos), and type that was outlined on spreadsheet
 //returns the dollars owed
 
 function getCost(longitude, latitude, daysToShip, packWeight, type){
@@ -49,13 +49,16 @@ function getCost(longitude, latitude, daysToShip, packWeight, type){
         //gets production costs
         let ratioOfIndex = 0;
         let products = ["Clothing, Shoes, Jewelry & Watches","Amazon Fresh","Books","Movies","Music & Games","Electronics","Computers","Smart Home","Home, Garden & Tools","Pet Supplies","Grocery & Gourmet Food","Beauty & Health","Toys","Kids & Baby","Handmade","Sports","Outdoors","Automotive & Industrial","Industrial & Scientific"];
-        let ratio = [0.057,0.0011,0.18,0.018,0.3056,0.133,0.3056,0.057,1.53,0.01,0.866,0.00277,0.003,0.057,0.057,0.057,0.000108];
+        let ratio = [0.057,0.0011,0.18,0.018,0.3056,0.133,0.3056,0.057,.153,0.01,0.866,0.00277,0.003,0.057,0.057,0.057,0.000108];
         let index = 0;
         for(index; index < products.length; index++){
             if(type == products[index]){
                 ratioOfIndex = ratio[index];
                 index += products.length;
             }
+        }
+        if(ratioOfIndex == 0){
+                ratioOfIndex = .115; //average ratio
         }
         prodCost = packWeight * ratioOfIndex * 1000;
         totalCost =  prodCost + shipCost;
