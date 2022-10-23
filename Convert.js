@@ -48,7 +48,7 @@ function getCost(longitude, latitude, daysToShip, packWeight, type){
 
         //gets production costs
         let ratioOfIndex = 0;
-        let products = ["Clothing, Shoes, Jewelry & Watches","Amazon Fresh","Books","Movies","Music & Games","Electronics","Computers","Smart Home","Home, Garden & Tools","Pet Supplies","Grocery & Gourmet Food","Beauty & Health","Toys","Kids & Baby","Handmade","Sports","Outdoors","Automotive & Industrial","Industrial & Scientific"];
+        let products = ["Clothing, Shoes & Jewelry","Amazon Devices & Accessories","Books","Movies & TV","Musical Instruments","Electronics","Computers & Accessories","Home and Kitchen","Tools & Home Improvement","Pet Supplies","Grocery & Gourmet Food","Beauty & Personal Care","Toys & Games","Baby","Handmade Products","Sports & Outdoors","Automotive","Industrial & Scientific"];
         let ratio = [0.057,0.0011,0.18,0.018,0.3056,0.133,0.3056,0.057,.153,0.01,0.866,0.00277,0.003,0.057,0.057,0.057,0.000108];
         let index = 0;
         for(index; index < products.length; index++){
