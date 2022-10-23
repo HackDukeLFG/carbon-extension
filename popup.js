@@ -1,13 +1,27 @@
-// import {title, delivery, weight, groups} from './scripts/main.js'
+// Update the relevant fields with the new data.
+const setDOMInfo = (info) => {
+  document.getElementById("item_name").textContent = info.name;
+  // document.getElementById("inputs").textContent = info.inputs;
+  // document.getElementById("buttons").textContent = info.buttons;
+};
 
-let itemName = document.querySelector("#item_name");
-itemName.innerHTML = "hello";
-
-// const button = document.querySelector("body");
-// button.addEventListener("click", () => {
-//   alert("CLICKED!!");
-// });
-
-
-
-
+// Once the DOM is ready...
+window.addEventListener("DOMContentLoaded", () => {
+  // ...query for the active tab...
+  chrome.tabs.query(
+    {
+      active: true,
+      currentWindow: true,
+    },
+    (tabs) => {
+      // ...and send a request for the DOM info...
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        { from: "popup", subject: "DOMInfo" },
+        // ...also specifying a callback to be called
+        //    from the receiving end (content script).
+        setDOMInfo
+      );
+    }
+  );
+});

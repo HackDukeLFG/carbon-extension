@@ -12,16 +12,18 @@
       "*://*/*"
     ],
     "permissions": [
-      "tabGroups"
+      "storage",
+      "tabs"
     ],
     "content_scripts": [
       {
-        "js": ["scripts/content.js"],
+        "js": ["scripts/webscrape.js"],
         "matches": [
           "https://*.amazon.com/*"
         ]
-      }], "web_accessible_resources": [{
-        "resources": ["main.js", "popup.js"],
+      }],
+      "web_accessible_resources": [{
+        "resources": [],
         "matches": ["https://*.amazon.com/*"]
       }]
 }
