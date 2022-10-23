@@ -1,4 +1,4 @@
-//pass in longitude, latitude, days, weight of package, and type that was outlined on spreadsheet
+//pass in longitude, latitude, date of delivery, weight of package, and type that was outlined on spreadsheet
 //returns the dollars owed
 
 function getCost(longitude, latitude, daysToShip, packWeight, type) {
@@ -284,9 +284,7 @@ function getCost(longitude, latitude, daysToShip, packWeight, type) {
   //gets production costs
   let ratioOfIndex = 0;
   let products = [
-    "Clothing",
-    "Shoes",
-    "Jewelry & Watches",
+    "Clothing, Shoes, Jewelry & Watches",
     "Amazon Fresh",
     "Books",
     "Movies",
