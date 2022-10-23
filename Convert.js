@@ -1,3 +1,6 @@
+//pass in longitude, latitude, days, weight of package, and type that was outlined on spreadsheet
+//returns the dollars owed
+
 function getCost(longitude, latitude, daysToShip, packWeight, type){
         //varables 
         let shipCost = 0; //kilograms of CO2
@@ -56,7 +59,5 @@ function getCost(longitude, latitude, daysToShip, packWeight, type){
         }
         prodCost = packWeight * ratioOfIndex;
         totalCost =  prodCost + shipCost;
-        return totalCost/1200 * 4;
+        return totalCost/1200 * 4; //dollars owed
 }
-let swag = getCost(39.99, 78.95,5,2000.78,"Books");
-console.log(swag);
