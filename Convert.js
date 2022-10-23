@@ -57,7 +57,7 @@ function getCost(longitude, latitude, daysToShip, packWeight, type){
                 index += products.length;
             }
         }
-        prodCost = packWeight * ratioOfIndex;
+        prodCost = packWeight * ratioOfIndex * 1000;
         totalCost =  prodCost + shipCost;
-        return totalCost/1200 * 4; //dollars owed
+        return totalCost/1200; //dollars owed
 }
