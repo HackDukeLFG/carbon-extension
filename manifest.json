@@ -16,12 +16,12 @@
     ],
     "content_scripts": [
       {
-        "js": ["scripts/content.js"],
+        "js": ["content.js"],
         "matches": [
           "https://*.amazon.com/*"
         ]
       }], "web_accessible_resources": [{
-        "resources": ["main.js", "popup.js"],
+        "resources": ["webscraper.js"],
         "matches": ["https://*.amazon.com/*"]
       }]
 }

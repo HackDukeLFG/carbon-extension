@@ -29,5 +29,5 @@ const latLong = () => {
 
 // window.alert(title + "/n" + delivery + "/n" + weight + "/n" + groups)
 
-export {title, delivery, weight, groups}
+// export {title, delivery, weight, groups}
 //, latitude, longitude}

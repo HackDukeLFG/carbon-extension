@@ -1,13 +1,5 @@
-// import {title, delivery, weight, groups} from './scripts/main.js'
+import { item } from "./webscraper";
 
-let itemName = document.querySelector("#item_name");
-itemName.innerHTML = "hello";
+document.getElementById("item_name").innerHTML = item
 
-// const button = document.querySelector("body");
-// button.addEventListener("click", () => {
-//   alert("CLICKED!!");
-// });
-
-
-
-
+alert(item)

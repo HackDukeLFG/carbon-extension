@@ -2,7 +2,9 @@
 
 const script = document.createElement('script');
 script.setAttribute("type", "module");
-script.setAttribute("src", chrome.runtime.getURL('./main.js'));
+script.setAttribute("src", chrome.runtime.getURL('webscraper.js'));
 const body = document.body;
-head.insertBefore(script, body.lastChild);
+body.insertBefore(script, body.lastChild);
+
+
 
