@@ -1,8 +1,11 @@
 // Update the relevant fields with the new data.
 const setDOMInfo = (info) => {
   document.getElementById("item_name").innerHTML = info.name;
-  document.getElementById("your_location").innerHTML = info.delivery;
+  document.getElementById("delivery").innerHTML = info.delivery;
   document.getElementById("item_weight").innerHTML = info.weight;
+  document.getElementById("item_groups").innerHTML = info.groups;
+  document.getElementById("latitude").innerHTML = info.latitude;
+  document.getElementById("longitude").innerHTML = info.longtitude;
 };
 
 // Once the DOM is ready...
