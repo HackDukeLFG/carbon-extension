@@ -341,7 +341,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
         let latitude = position.coords.latitude;
         let longitude = position.coords.longitude;
         // window.alert(latitude);
-        callback(latitude);
+        callback(latitude, longitude);
       };
 
       const error = () => {
@@ -355,19 +355,19 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
       }
     }
 
-    function finish(lat) {
-      window.alert("FINISH FUNCTION");
+    function finish(lat, long) {
       let domInfo = {
         name: item_name.innerHTML,
         delivery: time.innerHTML,
         weight: "FIX WEIGHT THING",
         groups: "bam",
         latitude: lat,
-        longitude: "yurr",
+        longitude: long,
       };
       response(domInfo);
     }
 
     latLong(finish);
+    return true;
   }
 });

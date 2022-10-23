@@ -1,11 +1,20 @@
 // Update the relevant fields with the new data.
-const setDOMInfo = (info) => {
+const setDOMInfo = (
+  info = {
+    name: "",
+    delivery: "",
+    weight: "",
+    groups: "",
+    latitude: "",
+    longitude: "",
+  }
+) => {
   document.getElementById("item_name").innerHTML = info.name;
   document.getElementById("delivery").innerHTML = info.delivery;
   document.getElementById("item_weight").innerHTML = info.weight;
   document.getElementById("item_groups").innerHTML = info.groups;
   document.getElementById("latitude").innerHTML = info.latitude;
-  document.getElementById("longitude").innerHTML = info.longtitude;
+  document.getElementById("longitude").innerHTML = info.longitude;
 };
 
 // Once the DOM is ready...
