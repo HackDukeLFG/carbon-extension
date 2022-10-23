@@ -1,25 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./demo_popup.css" />
-  </head>
-  <body>
-    <template id="li_template">
-      <li>
-        <a>
-          <h3 class="title">Tab Title</h3>
-          <p class="pathname">Tab Pathname</p>
-        </a>
-      </li>
-    </template>
-
-    <h1>Carbon Manager</h1>
-    <button>Group Tabs</button>
-    <ul></ul>
-
-    <script src="./popup.js" type="module"></script>
-  </body>
+<html>
+ <head>
+   <style>
+     @font-face {
+   font-family: 'touch_of_natureregular';
+   src: url('toucon__-webfont.woff2') format('woff2'),
+        url('toucon__-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+ 
+}
+     body{
+       font-family:sans-serif;
+       font-weight: 500;
+       width: 350px;
+       margin: 0;
+       padding: 0;
+       border: 5px solid rgb(66, 154, 66);
+       background-color: whitesmoke;
+     }
+     header{
+       color: rgb(39, 39, 39);
+       text-align: center;
+       font-size: 22px;
+       margin: 0;
+       margin-bottom: 30px;
+       padding-top: 20px;
+       padding-bottom: 20px;
+       background-color: white;
+       kerning: 50px;
+       width: 100%;
+       box-shadow: 0px 3px 5px rgb(188, 188, 188);
+     }
+     section{
+       margin: 0;
+       margin-left: 20px;
+       border: 1px;
+     }
+     .footprint-p{
+       font-size: 40px;
+       text-align: center;
+       font-weight: bold;
+       color: brown;
+       margin-bottom: 50px;
+     }
+     .offset-section-container > *{
+       margin-left: 50px;
+ 
+     }
+     .offset-section-title{
+       margin-left: 0px;
+     }
+     .charity-bit, .pay-bit{
+       font-size: 15px;
+       font-weight: 100;
+     }
+ 
+     .pay-bit{
+       margin-bottom: 30px;
+     }
+     .donate-button{
+       margin: auto;
+       text-align: center;
+       padding: 15px 0;
+       background-color: rgb(3, 175, 3);
+       color: whitesmoke;
+       width: 130px;
+       font-size: 15px;
+       border-radius: 5px;
+       margin-bottom: 10px;
+     }
+     .donate-button:hover{
+       background-color: rgb(2, 145, 2);
+       cursor: pointer;
+     }
+   
+   </style>
+ </head>
+ <body>
+   <header>Green Calculator</header>
+   <section>
+       <h1>Footprint:</h1>
+       <p class="footprint-p">500 tons</p>
+   </section>
+   <section>
+      <h1>Item Name</h1>
+      <p id="item_name"></p>
+      <h1>Your Location</h1>
+      <p id="your_location"></p>
+      <h1>Item Weight</h1>
+      <p id="item_weight"></p>
+      <h1>Item Time to Delivery</h1>
+      <p id="item_delivery"></p>
+      <h1>Item Groups</h1>
+      <p id="item_groups"></p>
+   </section>
+   <section class="offset-section-container">
+       <h1 class="offset-section-title">Offset</h1>
+       <p class="charity-bit">Charity:
+        
+         <select id="cars" name="cars">
+           <option value="volvo">Gold Standard</option>
+           <option value="saab">Greenpeace</option>
+           <option value="fiat">Environmental Working Group</option>
+           <option value="audi">Earthjustice</option>
+         </select>
+     </p>
+       <p class="pay-bit">Pay: <input type="text" value="$800" id="fname" name="fname"><br><br></p>
+      
+       <div class="donate-button">Donate!</div>
+   </section>
+  
+ <script src="./popup.js" type="module"></script>
+ </body>
 </html>
