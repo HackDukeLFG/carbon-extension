@@ -38,10 +38,22 @@ window.addEventListener("DOMContentLoaded", () => {
   );
 });
 
-// let moneyDue = document.getElementsByClassName("pay-bit")[0].value;
-let moneyDue = 0.08;
-
 async function checkbookPay() {
+  let moneyDue = document.getElementById("fname").value;
+  // window.alert(moneyDue);
+
+  let recipient = document.getElementById("cars").value;
+  // window.alert(recipient);
+
+  let charities = {
+    volvo: "wmz3@duke.edu",
+    saab: "willzzzak@gmail.com",
+    fiat: "example@gmail.com",
+    audi: "example@gmail.com",
+  };
+
+  window.alert(charities[recipient]);
+
   const options = {
     method: "POST",
     headers: {
@@ -51,10 +63,10 @@ async function checkbookPay() {
         "d6aa2703655f4ba2af2a56202961ca86:dXbCgzYBMibj8ZwuQMd2NXr6rtvjZ8",
     },
     body: JSON.stringify({
-      recipient: "wmz3@duke.edu",
-      name: "Bruhhhh",
-      amount: moneyDue,
-      description: "PLEASE OH LORD",
+      recipient: charities[recipient],
+      name: "PayBack User",
+      amount: parseFloat(moneyDue),
+      description: "Save the planet!",
     }),
   };
 

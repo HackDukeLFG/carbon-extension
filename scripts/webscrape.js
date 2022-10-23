@@ -359,7 +359,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
       let domInfo = {
         name: item_name.innerHTML,
         delivery: time.innerHTML,
-        weight: "FIX WEIGHT THING",
+        weight: "Weight Unknown",
         groups: "bam",
         latitude: lat,
         longitude: long,
