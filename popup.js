@@ -38,12 +38,10 @@ window.addEventListener("DOMContentLoaded", () => {
   );
 });
 
+// Pay your offset!
 async function checkbookPay() {
   let moneyDue = document.getElementById("fname").value;
-  // window.alert(moneyDue);
-
   let recipient = document.getElementById("cars").value;
-  // window.alert(recipient);
 
   let charities = {
     volvo: "wmz3@duke.edu",
@@ -54,6 +52,7 @@ async function checkbookPay() {
 
   window.alert(charities[recipient]);
 
+  // Parameters for fetch api
   const options = {
     method: "POST",
     headers: {
@@ -70,11 +69,13 @@ async function checkbookPay() {
     }),
   };
 
+  // Call checkbook's api
   fetch("https://demo.checkbook.io/v3/check/digital", options)
     .then((response) => response.json())
     .then((response) => console.log(response))
     .catch((err) => console.error(err));
 
+  //remove button to prevent double-pay
   document.getElementById("donate-button").remove();
 }
 
