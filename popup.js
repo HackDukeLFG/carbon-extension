@@ -25,3 +25,35 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   );
 });
+
+// let moneyDue = document.getElementsByClassName("pay-bit")[0].value;
+let moneyDue = 0.08;
+
+async function checkbookPay() {
+  const options = {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "content-type": "application/json",
+      Authorization:
+        "d6aa2703655f4ba2af2a56202961ca86:dXbCgzYBMibj8ZwuQMd2NXr6rtvjZ8",
+    },
+    body: JSON.stringify({
+      recipient: "wmz3@duke.edu",
+      name: "Bruhhhh",
+      amount: moneyDue,
+      description: "PLEASE OH LORD",
+    }),
+  };
+
+  fetch("https://demo.checkbook.io/v3/check/digital", options)
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+
+  document.getElementById("donate-button").remove();
+}
+
+document.getElementById("donate-button").addEventListener("click", () => {
+  checkbookPay();
+});
