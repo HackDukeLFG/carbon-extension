@@ -85,7 +85,7 @@ function getCost(longitude, latitude, delivDate, packWeight, type){
         "#mir-layout-DELIVERY_BLOCK-slot-PRIMARY_DELIVERY_MESSAGE_LARGE > span > span.a-text-bold"
       );
       const size = document.querySelector(
-        "#detailBullets_feature_div > ul > li:nth-child(1) > span > span:nth-child(2)"
+        "#detailBullets_feature_div > ul > li:nth-child(2) > span > span:nth-child(2)"
       );
       const ranks = document.querySelector(
         "#detailBulletsWrapper_feature_div > ul:nth-child(4) > li > span"
@@ -138,6 +138,7 @@ function getCost(longitude, latitude, delivDate, packWeight, type){
           if (size) {
               var dimensions = size.innerHTML;
               dimensions = dimensions.split("; ")[1];
+              alert(size.innerHTML);
               var arr = dimensions.split(" ");
               var weight = arr[0];
               var unit = arr[1];
@@ -152,7 +153,7 @@ function getCost(longitude, latitude, delivDate, packWeight, type){
               groups = ranks.innerHTML;
           }
 
-        const offset = getCost(long, lat, delivery.getTime(), weight, groups)
+        const offset = getCost(Math.abs(long), Math.abs(lat), delivery.getTime(), weight, groups)
         response(offset);
       }
   
